@@ -45,7 +45,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
   <div class="progress-card">
    <div class="progress-row"><span>Tiến độ theo ngày</span><span id="pct">0/15 ngày · 0%</span></div>
    <div class="bar"><span id="bar"></span></div>
-   <div style="color:var(--muted);font-size:.82rem;margin-top:8px">Cập nhật lần cuối: <b id="upd"></b></div>
+   <button class="reset" onclick="sendIvy()">📋 Gửi Ivy cập nhật</button> <span id="msg" style="font-size:.82rem;color:var(--accent)"></span><div style="color:var(--muted);font-size:.82rem;margin-top:8px">Cập nhật lần cuối: <b id="upd"></b></div>
   </div>
  </div>
  <div class="layout">
@@ -97,7 +97,7 @@ const DAYS=[
 ['27/10','Thứ Ba','Gia hạn',[[F,'Tracking Hết hạn (P3): reach, engagement, link clicks'],[E,'Tracking Hết hạn (E7)'],[E,'22h: theo dõi Gia hạn (E8) gửi'],[W,'Cập nhật hạn mới 27/10 trên landing page, banner web, banner sale']]],
 ['28/10','Thứ Tư','Đóng chương trình + báo cáo',[[W,'Tắt discount, gỡ banner, landing page → "Ưu đãi đã kết thúc"'],[F,'Báo cáo P1 → P3: reach, engagement, link clicks'],[E,'Báo cáo E1 → E8: open rate, CTR, CVR, doanh thu, kết quả A/B'],[W,'Báo cáo landing page: traffic, CVR, AOV, doanh thu theo SKU'],['★','Báo cáo tổng kết chương trình']]]
 ];
-const load=()=>{const s={};DONE_DAYS.forEach(i=>DAYS[i][3].forEach((_,j)=>s[i+'-'+j]=true));return s};
+const load=()=>{let s={};try{s=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){};DONE_DAYS.forEach(i=>DAYS[i][3].forEach((_,j)=>s[i+'-'+j]=true));return s};
 const save=s=>localStorage.setItem(KEY,JSON.stringify(s));
 function render(){
  const st=load();let done=0;let nav='',main='';
@@ -106,14 +106,16 @@ function render(){
   const n=d[3].filter((_,j)=>st[i+'-'+j]).length;
   nav+=`<button class="day-link ${ok?'done':''}" onclick="document.getElementById('d${i}').scrollIntoView()"><span>${d[1]} ${d[0]}<small>${d[2]||n+'/'+d[3].length+' việc'}</small></span><span class="dot"></span></button>`;
   main+=`<section class="card ${ok?'done':''}" id="d${i}"><div class="head"><div><div class="t">${d[1]} ${d[0]}</div>${d[2]?`<div class="s">${d[2]}</div>`:''}</div><span class="badge">${ok?'✓ Hoàn thành':n+'/'+d[3].length}</span></div><ul>`+
-   d[3].map((t,j)=>{const k=i+'-'+j;return `<li class="${st[k]?'ok':''}"><input type="checkbox" id="c${k}" ${st[k]?'checked':''} disabled onchange="tick('${k}',this.checked)"><span class="ic">${t[0]}</span><label for="c${k}">${t[1]}</label></li>`}).join('')+`</ul></section>`;
+   d[3].map((t,j)=>{const k=i+'-'+j;return `<li class="${st[k]?'ok':''}"><input type="checkbox" id="c${k}" ${st[k]?'checked':''} onchange="tick('${k}',this.checked)"><span class="ic">${t[0]}</span><label for="c${k}">${t[1]}</label></li>`}).join('')+`</ul></section>`;
  });
  document.getElementById('nav').innerHTML=nav;document.getElementById('main').innerHTML=main;
  const p=Math.round(done/DAYS.length*100);
  document.getElementById('pct').textContent=`${done}/${DAYS.length} ngày · ${p}%`;document.getElementById('bar').style.width=p+'%';
 }
 function tick(k,v){const s=load();s[k]=v;save(s);const y=scrollY;render();scrollTo(0,y)}
+function sendIvy(){const s=load();const d=DAYS.map((x,i)=>i).filter(i=>!DONE_DAYS.includes(i)&&DAYS[i][3].every((_,j)=>s[i+'-'+j]));const m=document.getElementById('msg');if(!d.length){m.textContent='Chưa có ngày mới nào tick đủ.';return}const t='Ivy cập nhật link Early BF: xong '+d.map(i=>DAYS[i][0]).join(', ');navigator.clipboard.writeText(t).then(()=>m.textContent='Đã copy: "'+t+'" → dán vào chat Ivy',()=>m.textContent=t)}
 render();document.getElementById('upd').textContent=UPDATED;
 </script></body></html>
+
 
 
