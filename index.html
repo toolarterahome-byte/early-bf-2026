@@ -1,0 +1,119 @@
+﻿<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Artera — Early BF / First Light Favorites · Tiến độ</title>
+<style>
+:root{--ink:#1e2925;--muted:#67726d;--line:#dce3df;--paper:#fffefd;--wash:#f4f7f4;--accent:#486c58;--accentsoft:#e1ede4;--warm:#b87542;--radius:16px;--shadow:0 12px 34px rgba(32,58,45,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--wash);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,"Segoe UI",sans-serif;line-height:1.55}
+.shell{max-width:1300px;margin:auto;padding:24px}
+.top{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.eyebrow{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;font-weight:750;color:var(--accent)}
+h1{font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.1;margin:.5rem 0 .8rem}
+.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.ic{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:22px;border-radius:6px;font-size:.78rem;font-weight:800;border:1px solid var(--line);background:#fff;padding:0 4px}
+.progress-card{margin:18px 0 0;padding:14px 16px;border:1px solid #c9ddd0;border-radius:12px;background:#f7fbf8}
+.progress-row{display:flex;justify-content:space-between;font-weight:750;margin-bottom:8px}
+.bar{height:14px;background:#e3ebe5;border-radius:99px;overflow:hidden}.bar>span{display:block;height:100%;background:linear-gradient(90deg,#486c58,#7a9a5c);width:0;transition:width .4s}
+.layout{display:grid;grid-template-columns:240px 1fr;gap:22px;margin-top:22px}
+.sidebar{position:sticky;top:18px;height:max-content;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:12px}
+.day-link{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;border:0;background:none;font:inherit;padding:8px 9px;border-radius:9px;cursor:pointer;color:var(--ink)}
+.day-link:hover{background:var(--accentsoft)}.day-link small{color:var(--muted);font-size:.74rem;display:block}
+.day-link .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:none}
+.day-link.done .dot{background:var(--accent);border-color:var(--accent)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);margin:0 0 16px;overflow:hidden;scroll-margin-top:16px}
+.card.done{border-color:#9fc0ab}
+.head{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.head .t{font-size:1.15rem;font-weight:800}.head .s{color:var(--warm);font-weight:700;font-size:.85rem}
+.badge{font-size:.78rem;font-weight:800;padding:5px 10px;border-radius:99px;background:#f1f3f1;color:var(--muted);white-space:nowrap}
+.card.done .badge{background:var(--accent);color:#fff}
+ul{list-style:none;margin:0;padding:10px 14px}
+li{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-bottom:1px dashed #edf0ee}li:last-child{border:0}
+li input{width:18px;height:18px;margin-top:3px;accent-color:var(--accent);flex:none;cursor:pointer}
+li label{cursor:pointer}li.ok label{color:var(--muted);text-decoration:line-through}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th{background:#4F6130;color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid var(--line)}
+.ref{padding:16px 20px}
+.plan-btn{display:inline-block;margin:0 0 12px;padding:9px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:750}.plan-btn:hover{background:#3a5747}.reset{margin-top:12px;font:inherit;font-size:.82rem;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer}
+.wm{position:fixed;inset:0;pointer-events:none;opacity:.06;z-index:99;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><text x='10' y='100' transform='rotate(-20 160 90)' font-family='Arial' font-size='20' fill='%23000'>Thảo Diệp - Ivy</text></svg>")}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:auto;display:flex;overflow:auto;gap:4px}.day-link{min-width:150px}}
+</style></head><body>
+<div class="wm"></div>
+<div class="shell">
+ <div class="top">
+  <div class="eyebrow">Artera Home · Kế hoạch triển khai</div>
+  <h1>Early BF / First Light Favorites — Tiến độ 14/10 → 28/10</h1>
+  <a class="plan-btn" href="plan.html" target="_blank">📄 Xem chi tiết plan</a><div class="legend"><span><span class="ic">✉️</span> Email</span><span><span class="ic">ⓕ</span> Social</span><span><span class="ic">Ⓦ</span> Web</span><span>Email gửi 22h giờ VN · tracking sáng hôm sau</span></div>
+  <div class="progress-card">
+   <div class="progress-row"><span>Tiến độ theo ngày</span><span id="pct">0/15 ngày · 0%</span></div>
+   <div class="bar"><span id="bar"></span></div>
+   <div style="color:var(--muted);font-size:.82rem;margin-top:8px">Cập nhật lần cuối: <b id="upd"></b></div>
+  </div>
+ </div>
+ <div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main id="main"></main>
+ </div>
+ <div class="card"><div class="head"><div class="t">Lịch gửi email</div></div><div class="ref"><table>
+ <tr><th>Email</th><th>Nội dung</th><th>Gửi (VN)</th><th>Segment</th></tr>
+ <tr><td>Hé lộ (E1)</td><td>Teaser, chưa công bố giá</td><td>15/10 22h</td><td>① ③ ④ ⑤</td></tr>
+ <tr><td>Công bố (E2)</td><td>Mở bán −25%</td><td>22/10 22h</td><td>① ③ ④ ⑤</td></tr>
+ <tr><td>Gương Eddy (E3)</td><td>Spotlight gương Eddy</td><td>23/10 22h</td><td>③</td></tr>
+ <tr><td>Khay xà cừ (E4)</td><td>Spotlight khay xà cừ</td><td>24/10 22h</td><td>⑤ + ②</td></tr>
+ <tr><td>Tranh tường (E5)</td><td>Spotlight tranh tường</td><td>25/10 22h</td><td>④</td></tr>
+ <tr><td>Giải đáp thắc mắc (E6)</td><td>Founder ký · ship 5–7 ngày · vỡ thay mới · đổi ý trả hàng 30 ngày</td><td>25/10 22h</td><td>① ③ ⑤</td></tr>
+ <tr><td>Hết hạn (E7)</td><td>Hôm nay hết ưu đãi</td><td>26/10 22h</td><td>① ③ ④ ⑤</td></tr>
+ <tr><td>Gia hạn (E8)</td><td>Thêm 1 ngày</td><td>27/10 22h</td><td>① ③ ④ ⑤</td></tr>
+ </table><p style="color:var(--muted);font-size:.88rem">Segment: ① Engaged 90 ngày · ② Đã mua · ③ Xem trang gương · ④ Xem trang tranh tường · ⑤ Xem trang khay. Post (ảnh đơn/carousel): P1 Hé lộ 15/10 · P2 Công bố 22/10 · P3 Hết hạn 26/10.</p></div></div>
+ <div class="card"><div class="head"><div class="t">Segment</div></div><div class="ref"><table>
+ <tr><th>Mã</th><th>Segment</th><th>Định nghĩa</th><th>Nhận email</th></tr>
+ <tr><td>①</td><td>Engaged</td><td>Mở email trong 90 ngày gần nhất</td><td>E1, E2, E6, E7, E8</td></tr>
+ <tr><td>②</td><td>Đã mua</td><td>Khách đã từng đặt hàng</td><td>E4</td></tr>
+ <tr><td>③</td><td>Xem gương</td><td>Đã xem trang sản phẩm gương</td><td>E1, E2, E3, E6, E7, E8</td></tr>
+ <tr><td>④</td><td>Xem tranh tường</td><td>Đã xem trang sản phẩm tranh tường</td><td>E1, E2, E5, E7, E8</td></tr>
+ <tr><td>⑤</td><td>Xem khay</td><td>Đã xem trang sản phẩm khay</td><td>E1, E2, E4, E6, E7, E8</td></tr>
+ <tr><td>✕</td><td>Loại trừ</td><td>Đã hủy đăng ký, email bounce</td><td>Không gửi</td></tr>
+ </table></div></div>
+ <footer>© Thảo Diệp - Ivy · Artera Home</footer>
+</div>
+<script>
+const KEY='artera-earlybf-v1';
+// Ivy cập nhật: danh sách ngày đã hoàn thành (index 0=14/10 ... 14=28/10)
+const DONE_DAYS=[];
+const UPDATED='14/10/2026';
+const E='✉️',F='ⓕ',W='Ⓦ';
+const DAYS=[
+['14/10','Thứ Tư','Set up nền tảng',[[W,'Sửa giá gương Eddy Large + khay Set of 2 về giá gốc (làm trước tiên)'],[W,'Set up discount −25%, lịch active 22/10 → hết 27/10'],[W,'QA giá + tồn kho các SKU tham gia'],[E,'Tạo segment ①–⑤ + segment loại trừ (unsubscribed, bounce)'],[E,'Hé lộ (E1): viết copy, dựng, QA, lên lịch 22h 15/10'],[F,'Hé lộ (P1): thiết kế, caption teaser, duyệt']]],
+['15/10','Thứ Năm','Hé lộ lên sóng',[[F,'Đăng Hé lộ (P1)'],[E,'Viết copy Công bố (E2) — email chủ lực'],[E,'22h: theo dõi Hé lộ (E1) gửi đúng giờ, đúng segment'],[W,'Viết copy landing page: headline, giới thiệu, mô tả sản phẩm, CTA']]],
+['16/10','Thứ Sáu','',[[F,'Tracking Hé lộ (P1): reach, engagement'],[F,'Brief Công bố (P2): thông điệp, hình ảnh, caption'],[E,'Tracking Hé lộ (E1): open rate, CTR, unsubscribe rate'],[E,'Viết copy Gương Eddy (E3)'],[W,'Duyệt copy landing page'],[W,'Thiết kế landing page (1 bản chung máy tính + điện thoại)']]],
+['17/10','Thứ Bảy','',[[F,'Thiết kế + caption Công bố (P2)'],[E,'Viết copy Khay xà cừ (E4)'],[W,'Thiết kế banner web + banner sale']]],
+['18/10','Chủ Nhật','',[[F,'Duyệt Công bố (P2)'],[E,'Viết copy Tranh tường (E5)'],[W,'Duyệt landing page, banner web, banner sale']]],
+['19/10','Thứ Hai','',[[E,'Viết copy Giải đáp thắc mắc (E6), Founder ký'],[E,'Duyệt copy E2 → E6'],[W,'Dựng landing page trên Shopify']]],
+['20/10','Thứ Ba','',[[E,'Dựng trên Klaviyo E2, E3, E4'],[W,'QA landing page: tốc độ tải, link, CTA, hiển thị điện thoại']]],
+['21/10','Thứ Tư','QA trước mở bán',[[F,'Lên lịch Công bố (P2)'],[E,'Dựng Tranh tường (E5) + Giải đáp thắc mắc (E6)'],[E,'QA E2 → E6 + lên lịch 22h đúng segment'],[W,'Test order xác nhận discount 25%'],[W,'Lên lịch landing page, banner web, banner sale live 22/10']]],
+['22/10','Thứ Năm','CÔNG BỐ — mở bán',[[F,'Đăng Công bố (P2)'],[W,'Landing page + banner web + banner sale live'],[W,'Tracking web: traffic, CVR, số đơn, tồn kho'],[E,'22h: theo dõi Công bố (E2) gửi']]],
+['23/10','Thứ Sáu','',[[F,'Tracking Công bố (P2): reach, engagement, link clicks'],[F,'Brief, thiết kế, caption Hết hạn (P3)'],[E,'Tracking Công bố (E2): open rate, CTR, CVR, doanh thu'],[E,'Viết copy Hết hạn (E7), chừa hero'],[E,'22h: theo dõi Gương Eddy (E3) gửi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
+['24/10','Thứ Bảy','',[[F,'Duyệt Hết hạn (P3)'],[E,'Tracking Gương Eddy (E3)'],[E,'Viết copy Gia hạn (E8), chừa hero'],[E,'22h: theo dõi Khay xà cừ (E4) gửi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
+['25/10','Chủ Nhật','',[[F,'Lên lịch Hết hạn (P3)'],[E,'Tracking Khay xà cừ (E4)'],[E,'Chốt sản phẩm bán chạy nhất làm hero E7, E8'],[E,'Dựng, QA, lên lịch E7 + E8'],[E,'22h: theo dõi E5 + E6 gửi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
+['26/10','Thứ Hai','Hết hạn',[[F,'Đăng Hết hạn (P3)'],[E,'Tracking Tranh tường (E5) + Giải đáp thắc mắc (E6)'],[E,'22h: theo dõi Hết hạn (E7) gửi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
+['27/10','Thứ Ba','Gia hạn',[[F,'Tracking Hết hạn (P3): reach, engagement, link clicks'],[E,'Tracking Hết hạn (E7)'],[E,'22h: theo dõi Gia hạn (E8) gửi'],[W,'Cập nhật hạn mới 27/10 trên landing page, banner web, banner sale']]],
+['28/10','Thứ Tư','Đóng chương trình + báo cáo',[[W,'Tắt discount, gỡ banner, landing page → "Ưu đãi đã kết thúc"'],[F,'Báo cáo P1 → P3: reach, engagement, link clicks'],[E,'Báo cáo E1 → E8: open rate, CTR, CVR, doanh thu, kết quả A/B'],[W,'Báo cáo landing page: traffic, CVR, AOV, doanh thu theo SKU'],['★','Báo cáo tổng kết chương trình']]]
+];
+const load=()=>{const s={};DONE_DAYS.forEach(i=>DAYS[i][3].forEach((_,j)=>s[i+'-'+j]=true));return s};
+const save=s=>localStorage.setItem(KEY,JSON.stringify(s));
+function render(){
+ const st=load();let done=0;let nav='',main='';
+ DAYS.forEach((d,i)=>{
+  const ok=d[3].every((_,j)=>st[i+'-'+j]);if(ok)done++;
+  const n=d[3].filter((_,j)=>st[i+'-'+j]).length;
+  nav+=`<button class="day-link ${ok?'done':''}" onclick="document.getElementById('d${i}').scrollIntoView()"><span>${d[1]} ${d[0]}<small>${d[2]||n+'/'+d[3].length+' việc'}</small></span><span class="dot"></span></button>`;
+  main+=`<section class="card ${ok?'done':''}" id="d${i}"><div class="head"><div><div class="t">${d[1]} ${d[0]}</div>${d[2]?`<div class="s">${d[2]}</div>`:''}</div><span class="badge">${ok?'✓ Hoàn thành':n+'/'+d[3].length}</span></div><ul>`+
+   d[3].map((t,j)=>{const k=i+'-'+j;return `<li class="${st[k]?'ok':''}"><input type="checkbox" id="c${k}" ${st[k]?'checked':''} disabled onchange="tick('${k}',this.checked)"><span class="ic">${t[0]}</span><label for="c${k}">${t[1]}</label></li>`}).join('')+`</ul></section>`;
+ });
+ document.getElementById('nav').innerHTML=nav;document.getElementById('main').innerHTML=main;
+ const p=Math.round(done/DAYS.length*100);
+ document.getElementById('pct').textContent=`${done}/${DAYS.length} ngày · ${p}%`;document.getElementById('bar').style.width=p+'%';
+}
+function tick(k,v){const s=load();s[k]=v;save(s);const y=scrollY;render();scrollTo(0,y)}
+render();document.getElementById('upd').textContent=UPDATED;
+</script></body></html>
+
+
