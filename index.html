@@ -41,7 +41,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
  <div class="top">
   <div class="eyebrow">Artera Home · Kế hoạch triển khai</div>
   <h1>Early BF / First Light Favorites — Tiến độ 14/10 → 28/10 (ngày Mỹ)</h1>
-  <a class="plan-btn" href="plan.html" target="_blank">📄 Xem chi tiết plan</a><div class="legend"><span><span class="ic">✉️</span> Email</span><span><span class="ic">ⓕ</span> Social</span><span><span class="ic">Ⓦ</span> Web</span><span>📅 Ngày ghi theo <b>giờ Mỹ (ET)</b> · 8h ET = 19h VN cùng ngày · Việc chuẩn bị xong trước 1–2 ngày · Giá −25% chỉ đổi ngày 22/10 Mỹ</span></div>
+  <a class="plan-btn" href="plan.html" target="_blank">📄 Xem chi tiết plan</a><div class="legend"><span><span class="ic">✉️</span> Email</span><span><span class="ic">ⓕ</span> Social</span><span><span class="ic">Ⓦ</span> Web</span><span>📅 Ngày ghi theo <b>giờ Mỹ (ET)</b> · 1 ngày Mỹ = tối ngày đó → sáng hôm sau ở VN (VD 14/10 Mỹ = tối 14/10 → sáng 15/10 VN) · 8h ET = 19h VN · Việc chuẩn bị xong trước 1–2 ngày · Giá −25% chỉ đổi ngày 22/10 Mỹ</span></div>
   <div class="progress-card">
    <div class="progress-row"><span>Tiến độ theo ngày</span><span id="pct">0/15 ngày · 0%</span></div>
    <div class="bar"><span id="bar"></span></div>
@@ -99,6 +99,7 @@ const DAYS=[
 ];
 const load=()=>{let s={};try{s=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){};DONE_DAYS.forEach(i=>DAYS[i][3].forEach((_,j)=>s[i+'-'+j]=true));return s};
 const save=s=>localStorage.setItem(KEY,JSON.stringify(s));
+function nx(s){const[a,b]=s.split('/').map(Number);const t=new Date(2026,b-1,a+1);return t.getDate()+'/'+(t.getMonth()+1)}
 function render(){
  const st=load();let done=0;let nav='',main='';
  DAYS.forEach((d,i)=>{
