@@ -77,8 +77,8 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 <script>
 const KEY='artera-earlybf-v1';
 // Ivy cập nhật: danh sách ngày đã hoàn thành (index 0=14/10 ... 14=28/10)
-const DONE_DAYS=[];
-const UPDATED='15/10/2026 (theo kế hoạch v25, ngày Mỹ)';
+const DONE_DAYS=[0];
+const UPDATED='16/10/2026 (theo kế hoạch v25, ngày Mỹ)';
 const E='✉️',F='ⓕ',W='Ⓦ';
 const DAYS=[
 ['14/10','Thứ Tư','Set up nền tảng',[[E,'Tạo segment ①–⑥ + loại trừ (unsubscribed, bounce)'],[E,'Nhá hàng (E1): viết copy, dựng, QA, hẹn giờ 8h ET 15/10 (= 19h 15/10 VN)'],[F,'Nhá hàng (P1): thiết kế, caption teaser, duyệt, hẹn lịch đăng 15/10 Mỹ'],[W,'Chưa đổi giá web: E1 không nêu giá, giá chỉ set ngày 22/10 Mỹ']]],
@@ -105,8 +105,8 @@ function render(){
  DAYS.forEach((d,i)=>{
   const ok=d[3].every((_,j)=>st[i+'-'+j]);if(ok)done++;
   const n=d[3].filter((_,j)=>st[i+'-'+j]).length;
-  nav+=`<button class="day-link ${ok?'done':''}" onclick="document.getElementById('d${i}').scrollIntoView()"><span>${d[1]} ${d[0]}<small>${d[2]||n+'/'+d[3].length+' việc'}</small></span><span class="dot"></span></button>`;
-  main+=`<section class="card ${ok?'done':''}" id="d${i}"><div class="head"><div><div class="t">${d[1]} ${d[0]} <small style="font-weight:400;color:var(--muted)">(ngày Mỹ)</small></div>${d[2]?`<div class="s">${d[2]}</div>`:''}</div><span class="badge">${ok?'✓ Hoàn thành':n+'/'+d[3].length}</span></div><ul>`+
+  nav+=`<button class="day-link ${ok?'done':''}" onclick="document.getElementById('d${i}').scrollIntoView()"><span>${d[1]} ${d[0]} <i style="font-style:normal;font-weight:400;opacity:.7">(VN ${nx(d[0])})</i><small>${d[2]||n+'/'+d[3].length+' việc'}</small></span><span class="dot"></span></button>`;
+  main+=`<section class="card ${ok?'done':''}" id="d${i}"><div class="head"><div><div class="t">${d[1]} ${d[0]} <small style="font-weight:400;color:var(--muted)">(ngày Mỹ · VN ${nx(d[0])})</small></div>${d[2]?`<div class="s">${d[2]}</div>`:''}</div><span class="badge">${ok?'✓ Hoàn thành':n+'/'+d[3].length}</span></div><ul>`+
    d[3].map((t,j)=>{const k=i+'-'+j;return `<li class="${st[k]?'ok':''}"><input type="checkbox" id="c${k}" ${st[k]?'checked':''} onchange="tick('${k}',this.checked)"><span class="ic">${t[0]}</span><label for="c${k}">${t[1]}</label></li>`}).join('')+`</ul></section>`;
  });
  document.getElementById('nav').innerHTML=nav;document.getElementById('main').innerHTML=main;
