@@ -77,16 +77,16 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 <script>
 const KEY='artera-earlybf-v1';
 // Ivy cập nhật: danh sách ngày đã hoàn thành (index 0=14/10 ... 14=28/10)
-const DONE_DAYS=[0,1];
-const UPDATED='17/10/2026 (plan v26, lùi task chuẩn bị 15–20/10 sang 1 ngày)';
+const DONE_DAYS=[0,1,2];
+const DONE_TASKS=['3-0','3-2'];
+const UPDATED='19/10/2026 (plan v26; Chủ Nhật 18/10 nghỉ, task dời sang 19/10)';
 const E='✉️',F='ⓕ',W='Ⓦ';
 const DAYS=[
 ['14/10','Thứ Tư','Set up nền tảng',[[E,'Tạo segment ①–⑥ + loại trừ (unsubscribed, bounce)'],[E,'Nhá hàng (E1): viết copy, dựng, QA, hẹn giờ 8h ET 15/10 (= 19h 15/10 VN)'],[F,'Nhá hàng (P1): thiết kế, caption teaser, duyệt, hẹn lịch đăng 15/10 Mỹ'],[W,'Chưa đổi giá web: E1 không nêu giá, giá chỉ set ngày 22/10 Mỹ']]],
 ['15/10','Thứ Năm','Nhá hàng lên sóng',[[F,'ĐĂNG Nhá hàng (P1): 15/10 Mỹ, gợi ý 8h ET (= 19h 15/10 VN)'],[E,'GỬI Nhá hàng (E1): 8h ET 15/10 (= 19h 15/10 VN), theo dõi đúng giờ, đúng segment ① ③ ④'],[W,'Chuẩn bị: viết copy landing page (headline, giới thiệu, mô tả sản phẩm, CTA)'],[W,'Thiết kế landing page (1 bản chung máy tính + điện thoại)']]],
 ['16/10','Thứ Sáu','',[[F,'Tracking Nhá hàng (P1): reach, engagement (sáng 16/10 VN)'],[E,'Tracking Nhá hàng (E1): open rate, CTR, unsubscribe rate'],[E,'Chuẩn bị: viết copy Công bố (E2), email chủ lực']]],
 ['17/10','Thứ Bảy','',[[F,'Chuẩn bị: brief Công bố (P2), thông điệp, hình ảnh, caption'],[E,'Chuẩn bị: viết copy Tâm điểm Eddy (E3)'],[W,'Thiết kế banner web + banner sale']]],
-['18/10','Chủ Nhật','',[[F,'Chuẩn bị: thiết kế + caption Công bố (P2)'],[E,'Chuẩn bị: viết copy Tâm điểm tranh tường (E4)'],[F,'Duyệt Công bố (P2)']]],
-['19/10','Thứ Hai','',[[E,'Chuẩn bị: viết copy Lời nhắn riêng (E5), thư tay Founder ký'],[E,'Duyệt copy E2 → E6']]],
+['19/10','Thứ Hai','',[[F,'Chuẩn bị: thiết kế + caption Công bố (P2)'],[E,'Chuẩn bị: viết copy Tâm điểm tranh tường (E4)'],[F,'Duyệt Công bố (P2)'],[E,'Chuẩn bị: viết copy Lời nhắn riêng (E5), thư tay Founder ký'],[E,'Duyệt copy E2 → E6']]],
 ['20/10','Thứ Ba','',[[E,'Chuẩn bị: viết copy Eddy lần 2 (E6)'],[E,'Dựng trên Klaviyo E2, E3, E4']]],
 ['21/10','Thứ Tư','Hạn chót chuẩn bị trước mở bán',[[F,'Hẹn lịch đăng Công bố (P2) ngày 22/10 Mỹ (gợi ý 8h ET = 19h 22/10 VN)'],[E,'Dựng Lời nhắn riêng (E5) + Eddy lần 2 (E6)'],[E,'QA E2 → E6 + hẹn giờ múi ET đúng segment: E2 8h 22/10 · E3 8h 23/10 · E4 8h 24/10 (loại trừ ⑤ ThewCB) · E5 18h 24/10 (⑥, tắt Smart Sending) · E6 8h 25/10'],[W,'Chuẩn bị sẵn danh sách giá −25% 6 món (CHƯA đổi giá web)']]],
 ['22/10','Thứ Năm','CÔNG BỐ — mở bán',[[W,'SET GIÁ (chỉ làm ngày 22/10 Mỹ = từ 11h đến trước 19h 22/10 VN; sáng 22/10 VN vẫn là 21/10 Mỹ, chưa đổi): sửa Eddy Large + khay Set of 2 về giá gốc (bỏ giá gạch lệch), bật −25% cho 6 món, active đến hết 27/10 Mỹ'],[W,'QA giá + tồn kho + test order xác nhận discount 25% (xong trước 19h VN)'],[W,'BẬT CÔNG KHAI landing page + banner web + banner sale có giá ưu đãi (trước 19h 22/10 VN)'],[F,'ĐĂNG Công bố (P2): 22/10 Mỹ, gợi ý 8h ET (= 19h 22/10 VN)'],[E,'GỬI Công bố (E2): 8h ET 22/10 (= 19h 22/10 VN), theo dõi'],[W,'Tracking web: traffic, CVR, số đơn, tồn kho']]],
@@ -97,7 +97,7 @@ const DAYS=[
 ['27/10','Thứ Ba','Gia hạn',[[F,'Tracking Hết hạn (P3): reach, engagement, link clicks'],[E,'Tracking Khép lại (E7)'],[W,'Cập nhật hạn mới 27/10 trên landing page, banner web, banner sale (27/10 Mỹ = từ 11h đến trước 19h 27/10 VN)'],[E,'GỬI Thêm một ngày (E8): 8h ET 27/10 (= 19h 27/10 VN), theo dõi']]],
 ['28/10','Thứ Tư','Đóng chương trình + báo cáo',[[W,'Tắt discount, gỡ banner, landing page → "Ưu đãi đã kết thúc" (sau khi hết 27/10 Mỹ = từ 11h 28/10 VN)'],[F,'Báo cáo P1 → P3: reach, engagement, link clicks'],[E,'Báo cáo E1 → E8: open rate, CTR, CVR, doanh thu, kết quả A/B'],[W,'Báo cáo landing page: traffic, CVR, AOV, doanh thu theo SKU'],['★','Báo cáo tổng kết chương trình']]]
 ];
-const load=()=>{let s={};try{s=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){};DONE_DAYS.forEach(i=>DAYS[i][3].forEach((_,j)=>s[i+'-'+j]=true));return s};
+const load=()=>{let s={};try{s=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){};DONE_DAYS.forEach(i=>DAYS[i][3].forEach((_,j)=>s[i+'-'+j]=true));DONE_TASKS.forEach(k=>s[k]=true);return s};
 const save=s=>localStorage.setItem(KEY,JSON.stringify(s));
 function nx(s){const[a,b]=s.split('/').map(Number);const t=new Date(2026,b-1,a+1);return t.getDate()+'/'+(t.getMonth()+1)}
 function render(){
