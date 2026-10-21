@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Artera — Early BF / First Light Favorites · Tiến độ</title>
 <style>
@@ -43,7 +43,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
   <h1>Early BF / First Light Favorites — Tiến độ 14/10 → 28/10 (ngày Mỹ)</h1>
   <a class="plan-btn" href="plan.html" target="_blank">📄 Xem chi tiết plan</a><div class="legend"><span><span class="ic">✉️</span> Email</span><span><span class="ic">ⓕ</span> Social</span><span><span class="ic">Ⓦ</span> Web</span><span>📅 Ngày ghi theo <b>giờ Mỹ (ET)</b> · 1 ngày Mỹ = tối ngày đó → sáng hôm sau ở VN (VD 14/10 Mỹ = tối 14/10 → sáng 15/10 VN) · 8h ET = 19h VN · Việc chuẩn bị xong trước 1–2 ngày · Giá −25% chỉ đổi ngày 22/10 Mỹ</span></div>
   <div class="progress-card">
-   <div class="progress-row"><span>Tiến độ theo ngày</span><span id="pct">0/15 ngày · 0%</span></div>
+   <div class="progress-row"><span>Tiến độ theo ngày</span><span id="pct">0/14 ngày · 0%</span></div>
    <div class="bar"><span id="bar"></span></div>
    <button class="reset" onclick="sendIvy()">📋 Gửi Ivy cập nhật</button> <span id="msg" style="font-size:.82rem;color:var(--accent)"></span><div style="color:var(--muted);font-size:.82rem;margin-top:8px">Cập nhật lần cuối: <b id="upd"></b></div>
   </div>
@@ -77,9 +77,9 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 <script>
 const KEY='artera-earlybf-v1';
 // Ivy cập nhật: danh sách ngày đã hoàn thành (index 0=14/10 ... 14=28/10)
-const DONE_DAYS=[0,1,2];
-const DONE_TASKS=['3-0','3-2'];
-const UPDATED='19/10/2026 (plan v26; E5 copy dời sang 20/10, chia duyệt copy 19–20/10)';
+const DONE_DAYS=[0,1,2,3,4];
+const DONE_TASKS=[];
+const UPDATED='21/10/2026 (19/10 xong; bỏ ngày 20/10, rải việc chuẩn bị E2–E6 đều 21–25/10)';
 const E='✉️',F='ⓕ',W='Ⓦ';
 const DAYS=[
 ['14/10','Thứ Tư','Set up nền tảng',[[E,'Tạo segment ①–⑥ + loại trừ (unsubscribed, bounce)'],[E,'Nhá hàng (E1): viết copy, dựng, QA, hẹn giờ 8h ET 15/10 (= 19h 15/10 VN)'],[F,'Nhá hàng (P1): thiết kế, caption teaser, duyệt, hẹn lịch đăng 15/10 Mỹ'],[W,'Chưa đổi giá web: E1 không nêu giá, giá chỉ set ngày 22/10 Mỹ']]],
@@ -87,12 +87,11 @@ const DAYS=[
 ['16/10','Thứ Sáu','',[[F,'Tracking Nhá hàng (P1): reach, engagement (sáng 16/10 VN)'],[E,'Tracking Nhá hàng (E1): open rate, CTR, unsubscribe rate'],[E,'Chuẩn bị: viết copy Công bố (E2), email chủ lực']]],
 ['17/10','Thứ Bảy','',[[F,'Chuẩn bị: brief Công bố (P2), thông điệp, hình ảnh, caption'],[E,'Chuẩn bị: viết copy Tâm điểm Eddy (E3)'],[W,'Thiết kế banner web + banner sale']]],
 ['19/10','Thứ Hai','',[[F,'Chuẩn bị: thiết kế + caption Công bố (P2)'],[E,'Chuẩn bị: viết copy Tâm điểm tranh tường (E4)'],[F,'Duyệt Công bố (P2)'],[E,'Duyệt copy E2 → E4']]],
-['20/10','Thứ Ba','',[[E,'Chuẩn bị: viết copy Lời nhắn riêng (E5), thư tay Founder ký'],[E,'Chuẩn bị: viết copy Eddy lần 2 (E6)'],[E,'Duyệt copy E5 + E6'],[E,'Dựng trên Klaviyo E2, E3, E4']]],
-['21/10','Thứ Tư','Hạn chót chuẩn bị trước mở bán',[[F,'Hẹn lịch đăng Công bố (P2) ngày 22/10 Mỹ (gợi ý 8h ET = 19h 22/10 VN)'],[E,'Dựng Lời nhắn riêng (E5) + Eddy lần 2 (E6)'],[E,'QA E2 → E6 + hẹn giờ múi ET đúng segment: E2 8h 22/10 · E3 8h 23/10 · E4 8h 24/10 (loại trừ ⑤ ThewCB) · E5 18h 24/10 (⑥, tắt Smart Sending) · E6 8h 25/10'],[W,'Chuẩn bị sẵn danh sách giá −25% 6 món (CHƯA đổi giá web)']]],
-['22/10','Thứ Năm','CÔNG BỐ — mở bán',[[W,'SET GIÁ (chỉ làm ngày 22/10 Mỹ = từ 11h đến trước 19h 22/10 VN; sáng 22/10 VN vẫn là 21/10 Mỹ, chưa đổi): sửa Eddy Large + khay Set of 2 về giá gốc (bỏ giá gạch lệch), bật −25% cho 6 món, active đến hết 27/10 Mỹ'],[W,'QA giá + tồn kho + test order xác nhận discount 25% (xong trước 19h VN)'],[W,'BẬT CÔNG KHAI landing page + banner web + banner sale có giá ưu đãi (trước 19h 22/10 VN)'],[F,'ĐĂNG Công bố (P2): 22/10 Mỹ, gợi ý 8h ET (= 19h 22/10 VN)'],[E,'GỬI Công bố (E2): 8h ET 22/10 (= 19h 22/10 VN), theo dõi'],[W,'Tracking web: traffic, CVR, số đơn, tồn kho']]],
-['23/10','Thứ Sáu','',[[F,'Tracking Công bố (P2): reach, engagement, link clicks'],[E,'Tracking Công bố (E2): open rate, CTR, CVR, doanh thu'],[F,'Chuẩn bị: brief, thiết kế, caption Hết hạn (P3)'],[E,'Chuẩn bị: viết copy Khép lại (E7), chừa hero'],[E,'GỬI Tâm điểm Eddy (E3): 8h ET 23/10 (= 19h 23/10 VN), theo dõi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
-['24/10','Thứ Bảy','',[[F,'Duyệt Hết hạn (P3)'],[E,'Tracking Tâm điểm Eddy (E3)'],[E,'Chuẩn bị: viết copy Thêm một ngày (E8), chừa hero'],[E,'GỬI Tâm điểm tranh tường (E4): 8h ET 24/10 (= 19h 24/10 VN), loại trừ ⑤ ThewCB'],[E,'GỬI Lời nhắn riêng (E5): 18h ET 24/10 (= 5h sáng 25/10 VN), segment ⑥, tắt Smart Sending'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
-['25/10','Chủ Nhật','',[[F,'Hẹn lịch đăng Hết hạn (P3) ngày 26/10 Mỹ'],[E,'Tracking E4 + E5'],[E,'Chuẩn bị: chốt sản phẩm bán chạy nhất làm hero E7, E8; dựng, QA, hẹn giờ E7 (8h ET 26/10) + E8 (8h ET 27/10)'],[E,'GỬI Eddy lần 2 (E6): 8h ET 25/10 (= 19h 25/10 VN), theo dõi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
+['21/10','Thứ Tư','Hạn chót chuẩn bị trước mở bán',[[F,'Hẹn lịch đăng Công bố (P2) ngày 22/10 Mỹ (gợi ý 8h ET = 19h 22/10 VN)'],[E,'Dựng + QA + hẹn giờ Công bố (E2): 8h ET 22/10, segment ① ③ ④'],[E,'Dựng + QA + hẹn giờ Tâm điểm Eddy (E3): 8h ET 23/10, segment ③'],[E,'Chuẩn bị: viết copy Lời nhắn riêng (E5), thư tay Founder ký'],[W,'Chuẩn bị sẵn danh sách giá −25% 6 món (CHƯA đổi giá web)']]],
+['22/10','Thứ Năm','CÔNG BỐ — mở bán',[[W,'SET GIÁ (chỉ làm ngày 22/10 Mỹ = từ 11h đến trước 19h 22/10 VN; sáng 22/10 VN vẫn là 21/10 Mỹ, chưa đổi): sửa Eddy Large + khay Set of 2 về giá gốc (bỏ giá gạch lệch), bật −25% cho 6 món, active đến hết 27/10 Mỹ'],[W,'QA giá + tồn kho + test order xác nhận discount 25% (xong trước 19h VN)'],[W,'BẬT CÔNG KHAI landing page + banner web + banner sale có giá ưu đãi (trước 19h 22/10 VN)'],[F,'ĐĂNG Công bố (P2): 22/10 Mỹ, gợi ý 8h ET (= 19h 22/10 VN)'],[E,'GỬI Công bố (E2): 8h ET 22/10 (= 19h 22/10 VN), theo dõi'],[W,'Tracking web: traffic, CVR, số đơn, tồn kho'],[E,'Duyệt copy Lời nhắn riêng (E5)']]],
+['23/10','Thứ Sáu','',[[F,'Tracking Công bố (P2): reach, engagement, link clicks'],[E,'Tracking Công bố (E2): open rate, CTR, CVR, doanh thu'],[E,'Dựng + QA + hẹn giờ Tâm điểm tranh tường (E4): 8h ET 24/10, loại trừ ⑤ ThewCB'],[E,'Dựng + QA + hẹn giờ Lời nhắn riêng (E5): 18h ET 24/10, segment ⑥, tắt Smart Sending'],[E,'Chuẩn bị: viết copy Eddy lần 2 (E6)'],[E,'GỬI Tâm điểm Eddy (E3): 8h ET 23/10 (= 19h 23/10 VN), theo dõi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
+['24/10','Thứ Bảy','',[[F,'Chuẩn bị: brief, thiết kế, caption Hết hạn (P3)'],[E,'Tracking Tâm điểm Eddy (E3)'],[E,'Duyệt copy E6 → dựng + QA + hẹn giờ Eddy lần 2 (E6): 8h ET 25/10, segment ③'],[E,'Chuẩn bị: viết copy Khép lại (E7), chừa hero'],[E,'GỬI Tâm điểm tranh tường (E4): 8h ET 24/10 (= 19h 24/10 VN), loại trừ ⑤ ThewCB'],[E,'GỬI Lời nhắn riêng (E5): 18h ET 24/10 (= 5h sáng 25/10 VN), segment ⑥, tắt Smart Sending'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
+['25/10','Chủ Nhật','',[[F,'Duyệt + hẹn lịch đăng Hết hạn (P3) ngày 26/10 Mỹ'],[E,'Tracking E4 + E5'],[E,'Chuẩn bị: viết copy Thêm một ngày (E8), chừa hero'],[E,'Chuẩn bị: chốt sản phẩm bán chạy nhất làm hero E7, E8; dựng, QA, hẹn giờ E7 (8h ET 26/10) + E8 (8h ET 27/10)'],[E,'GỬI Eddy lần 2 (E6): 8h ET 25/10 (= 19h 25/10 VN), theo dõi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
 ['26/10','Thứ Hai','Hết hạn',[[F,'ĐĂNG Hết hạn (P3): 26/10 Mỹ, gợi ý 8h ET (= 19h 26/10 VN)'],[E,'Tracking Eddy lần 2 (E6)'],[E,'GỬI Khép lại (E7): 8h ET 26/10 (= 19h 26/10 VN), theo dõi'],[W,'Tracking traffic, CVR, doanh thu, tồn kho']]],
 ['27/10','Thứ Ba','Gia hạn',[[F,'Tracking Hết hạn (P3): reach, engagement, link clicks'],[E,'Tracking Khép lại (E7)'],[W,'Cập nhật hạn mới 27/10 trên landing page, banner web, banner sale (27/10 Mỹ = từ 11h đến trước 19h 27/10 VN)'],[E,'GỬI Thêm một ngày (E8): 8h ET 27/10 (= 19h 27/10 VN), theo dõi']]],
 ['28/10','Thứ Tư','Đóng chương trình + báo cáo',[[W,'Tắt discount, gỡ banner, landing page → "Ưu đãi đã kết thúc" (sau khi hết 27/10 Mỹ = từ 11h 28/10 VN)'],[F,'Báo cáo P1 → P3: reach, engagement, link clicks'],[E,'Báo cáo E1 → E8: open rate, CTR, CVR, doanh thu, kết quả A/B'],[W,'Báo cáo landing page: traffic, CVR, AOV, doanh thu theo SKU'],['★','Báo cáo tổng kết chương trình']]]
